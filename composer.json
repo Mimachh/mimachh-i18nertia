@@ -1,0 +1,25 @@
+{
+    "name": "mimachh/i18nertia",
+    "description": "Multi-langage package for Laravel/Inertia",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Mimachh\\I18nertia\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+          "providers": [
+            "Mimachh\\I18nertia\\I18nServiceProvider"
+          ]
+        }
+      },
+    "authors": [
+        {
+            "name": "Karl",
+            "email": "mimach.dev@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
