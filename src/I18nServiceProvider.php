@@ -24,8 +24,12 @@ class I18nServiceProvider extends ServiceProvider
         ], 'i18nertia-middleware');
 
         $this->publishes([
-            __DIR__ . '/./resources/js/Components/i18nertia' => resource_path('js/Components/mimachh/i18nertia')
+            __DIR__ . '/./resources/js/Components/i18nertia' => resource_path('js/Components/mimachh/i18nertia'),
+            __DIR__ . '/./resources/js/hooks' => resource_path('js/hooks'),
+            __DIR__ . '/./resources/js/types' => resource_path('js/types'),
         ], 'i18nertia-assets');
+
+
     }
 
     public function register()
