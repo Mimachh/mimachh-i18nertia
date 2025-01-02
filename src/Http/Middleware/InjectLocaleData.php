@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class InjectLocaleData
 {
+    // FIXME: possibilité d'utiliser le système de lang de laravel natif. En le chargeant ici.
     /**
      * Handle an incoming request.
      *
@@ -21,6 +22,7 @@ class InjectLocaleData
         // Vérifier si la langue est définie dans la session
         $languageCode = session('locale', null);
 
+        // TODO: mettre en cache la locale et donc la décacher avec le controller de changement de langue
         if (!$languageCode) {
             // Détecter la langue si elle n'est pas définie dans la session
             $browserLanguageService = new BrowserLanguageService();
@@ -83,6 +85,7 @@ class InjectLocaleData
      */
     private function loadJsonFile(string $filePath): ?array
     {
+        // TODO: mettre en cache les fichiers ?
         if (file_exists($filePath)) {
             return json_decode(file_get_contents($filePath), true);
         }
