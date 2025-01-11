@@ -7,3 +7,7 @@ export interface LocaleData {
     global: any;
     
 }
+
+export interface Translations {
+    [key: string]: string | Translations;
+  }

@@ -25,7 +25,7 @@ class LoadAllTranslations extends Middleware
 
         App::setLocale($languageCode);
         $translations = $this->loadTranslations($languageCode);
-        inertia()->share('localeDataBase', [
+        inertia()->share('translations', [
             'translations' => $translations,
             'languageCode' => $languageCode,
         ]);

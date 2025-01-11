@@ -23,11 +23,9 @@ class SelectedTranslations
 
         App::setLocale($languageCode);
 
-        // Charger les traductions de Laravel
-        $translationFiles = explode(',', $files);
+        $translationFiles = explode('|', $files);
         $translations = $this->loadTranslations($languageCode, $translationFiles);
-
-        inertia()->share('localeDataBase', [
+        inertia()->share('translations', [
             'translations' => $translations,
             'languageCode' => $languageCode,
         ]);
@@ -37,9 +35,7 @@ class SelectedTranslations
 
     private function loadTranslations(string $locale, array $files): array
     {
-        App::setLocale($locale);
         $translations = [];
-
         foreach ($files as $file) {
             $translations[$file] = Lang::get($file);
         }
