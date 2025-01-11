@@ -21,7 +21,7 @@ php artisan vendor:publish --tag=i18nertia-assets
 Then, modify the component as needed to suit your application.
 
 
-### Translation
+### Translation with JSON
 To use translations, create a locales folder in your app directory:
 ```
 app/
@@ -73,3 +73,16 @@ Then you can use the translation in your react component
 For small projects, you can store all your translations in a single file like `locales/${locale}.json`. This simplifies usage and maintenance.
 
 However, in larger projects with extensive translations, this approach can lead to performance issues. Instead, organize your translations into separate files that match your app's route structure for better scalability and maintainability.
+
+
+### Classic Laravel Translation
+Using `LoadAllTranslations.php` middleware you'll have access to the laravel lang:publish files. You can add your own files in here.
+
+Using `SelectedTranslations.php` middleware you can pass array of files in the lang:publish files : `middleware('<alias>:auth,validation')`
+
+By default this middlewares have default aliases : 
+```php
+$router->aliasMiddleware('translations', Translation::class);
+$router->aliasMiddleware('selected_translations', SelectedTranslation::class);
+```
+You can override it if needed.
