@@ -2,7 +2,7 @@ import { usePage } from "@inertiajs/react";
 import { LocaleData, Translations } from "@/types/locale";
 
 export function useTranslation() {
-    const translations = usePage().props.selectedTranslations as unknown as LocaleData;
+    const translations = usePage().props.translations as unknown as LocaleData;
   
     // Fonction pour accéder à une clé de traduction, prenant en compte l'imbrication
     const getTranslation = (key: string, data: Translations): string | undefined => {
