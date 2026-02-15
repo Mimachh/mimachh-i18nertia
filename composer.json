@@ -2,7 +2,7 @@
     "name": "mimachh/i18nertia",
     "description": "Multi-langage package for Laravel/Inertia",
     "type": "library",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "autoload": {
         "psr-4": {
             "Mimachh\\I18nertia\\": "src/"
