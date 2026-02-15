@@ -5,7 +5,6 @@ namespace Mimachh\I18nertia\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
-use Mimachh\I18nertia\Enums\Locales;
 
 class ChangeLocaleRequest extends FormRequest
 {
@@ -25,7 +24,7 @@ class ChangeLocaleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'locale' => ['required', 'string', Rule::in(array_column(Locales::cases(), 'value'))],
+            'locale' => ['required', 'string',  Rule::in(config('app.locales'))],
          ];
     }
 }

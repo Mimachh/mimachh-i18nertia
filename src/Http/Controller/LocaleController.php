@@ -9,12 +9,17 @@ class LocaleController extends Controller
 {
     public function __invoke(ChangeLocaleRequest $request)
     {
-       $data = $request->validated();
+        $data = $request->validated();
 
-       if($data) {
-        session(['locale' => $data['locale']]);
-        return redirect()->back(303);
-       }
+        $lang = $data['locale'];
+        if (!\in_array($lang, config('app.locales'))) {
+            $lang = config('app.fallback_locale');
+        }
 
+        if ($lang) {
+            session(['locale' => $lang]);
+            app()->setLocale($lang);
+            return redirect()->back();
+        }
     }
 }
