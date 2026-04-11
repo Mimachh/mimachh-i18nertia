@@ -11,6 +11,8 @@ use Mimachh\I18nertia\Services\BrowserLanguageService;
 use Symfony\Component\HttpFoundation\Response;
 use Inertia\Middleware;
 use Illuminate\Support\Facades\Lang;
+use Mimachh\LaravelCommon\Helpers\ToolboxHelper;
+use Mimachh\LaravelCommon\Support\TranslationRegistry;
 
 class LoadAllTranslations extends Middleware
 {
@@ -25,7 +27,13 @@ class LoadAllTranslations extends Middleware
         }
 
         App::setLocale($languageCode);
-        $translations = $this->loadTranslations($languageCode);
+
+        $isAdmin = $request->route()?->getPrefix() === 'admin';
+
+        $translations = array_merge(
+            ToolboxHelper::getCachedTranslations($languageCode),                  
+            TranslationRegistry::resolve($isAdmin ? 'back' : 'front'), 
+        );
 
         inertia()->share('translations', [
             'translations' => $translations,
@@ -35,16 +43,4 @@ class LoadAllTranslations extends Middleware
         return $next($request);
     }
 
-    private function loadTranslations(string $locale): array
-    {
-        return Cache::rememberForever("translations_{$locale}", function () use ($locale) {
-            $translations = [];
-            $files = glob(lang_path("{$locale}/*.php"));
-            foreach ($files as $file) {
-                $key = basename($file, '.php');
-                $translations[$key] = Lang::get($key);
-            }
-            return $translations;
-        });
-    }
 }
