@@ -2,7 +2,7 @@
     "name": "mimachh/i18nertia",
     "description": "Multi-langage package for Laravel/Inertia",
     "type": "library",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "autoload": {
         "psr-4": {
             "Mimachh\\I18nertia\\": "src/"
@@ -10,11 +10,11 @@
     },
     "extra": {
         "laravel": {
-          "providers": [
-            "Mimachh\\I18nertia\\I18nServiceProvider"
-          ]
+            "providers": [
+                "Mimachh\\I18nertia\\I18nServiceProvider"
+            ]
         }
-      },
+    },
     "authors": [
         {
             "name": "Karl",
@@ -22,5 +22,13 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "mimachh/laravel-common": "^0.0.9"
+    },
+    "repositories": {
+        "packistry": {
+            "type": "composer",
+            "url": "https://packistry.mimach.fr/r/laravel"
+        }
+    }
 }
