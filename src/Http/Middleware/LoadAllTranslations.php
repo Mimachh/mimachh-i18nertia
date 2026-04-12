@@ -33,6 +33,7 @@ class LoadAllTranslations extends Middleware
         $translations = array_merge(
             ToolboxHelper::getCachedTranslations($languageCode),                  
             TranslationRegistry::resolve($isAdmin ? 'back' : 'front'), 
+            TranslationRegistry::resolve('global')
         );
 
         inertia()->share('translations', [

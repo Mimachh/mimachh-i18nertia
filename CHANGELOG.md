@@ -6,10 +6,13 @@ All notable changes to `i18nertia` will be documented in this file.
 - This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html),
 - Commits respect [Conventionnal commits](https://www.conventionalcommits.org/en/v1.0.0/) & use [Gitmoji](https://gitmoji.dev/).
 
-## **[v0.1.1] - 11/04/2026**
+## **[v1.1.2] - 11/04/2026**
+- add global scope to the registry
+
+## **[v1.1.1] - 11/04/2026**
 - add laravel-common + common registry for translations
 
-## **[v0.1.0] - 23/12/2025**
+## **[v1.1.0] - 23/12/2025**
 Add new method in the `trans.ts` to add choice between singular/plural or masculine/feminine.
 
 ## **[v1.0.0] - 23/12/2025**
