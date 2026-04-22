@@ -6,6 +6,9 @@ All notable changes to `i18nertia` will be documented in this file.
 - This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html),
 - Commits respect [Conventionnal commits](https://www.conventionalcommits.org/en/v1.0.0/) & use [Gitmoji](https://gitmoji.dev/).
 
+## **[v1.1.3] - 22/04/2026**
+- bump laravel common 
+
 ## **[v1.1.2] - 11/04/2026**
 - add global scope to the registry
 

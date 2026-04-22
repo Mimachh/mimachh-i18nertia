@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c5881392d350fe4262acdad1422f4a7",
+    "content-hash": "ba7c45fef086d9ad5c2a8e78b7e70a5f",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -673,11 +673,11 @@
         },
         {
             "name": "mimachh/laravel-common",
-            "version": "0.0.9",
+            "version": "0.0.91",
             "dist": {
                 "type": "zip",
-                "url": "https://packistry.mimach.fr/r/laravel/mimachh/laravel-common/0.0.9",
-                "shasum": "6cd73347be83ebaaf621ea5342960b426f8d7cf7"
+                "url": "https://packistry.mimach.fr/r/laravel/mimachh/laravel-common/0.0.91",
+                "shasum": "4e51df9418c5e48228283301f0027be2c7449f1b"
             },
             "require": {
                 "sentry/sentry-laravel": "^4.25"
@@ -715,7 +715,7 @@
                     "email": "karl.muller@ldc.fr"
                 }
             ],
-            "time": "2026-04-11T20:12:32+00:00"
+            "time": "2026-04-22T19:43:02+00:00"
         },
         {
             "name": "nesbot/carbon",
